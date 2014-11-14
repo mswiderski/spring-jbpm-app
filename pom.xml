@@ -226,8 +226,8 @@
         <updatePolicy>never</updatePolicy>
       </releases>
       <snapshots>
-        <enabled>false</enabled>
-        <updatePolicy>never</updatePolicy>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
       </snapshots>
     </repository>
   </repositories>
