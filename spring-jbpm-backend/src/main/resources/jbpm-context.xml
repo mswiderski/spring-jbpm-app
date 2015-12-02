@@ -46,13 +46,16 @@
     <property name="identityProvider" ref="identityProvider"/>
     <property name="taskService" ref="taskService"/>
   </bean>
-  
+
+  <bean id="formManagerService" class="org.jbpm.kie.services.impl.FormManagerServiceImpl"/>
+
   <bean id="deploymentService" class="org.jbpm.kie.services.impl.KModuleDeploymentService" depends-on="entityManagerFactory" init-method="onInit">
     <property name="bpmn2Service" ref="definitionService"/>
     <property name="emf" ref="entityManagerFactory"/>
     <property name="managerFactory" ref="runtimeManagerFactory"/>
     <property name="identityProvider" ref="identityProvider"/>
     <property name="runtimeDataService" ref="runtimeDataService"/>
+    <property name="formManagerService" ref="formManagerService"/>
   </bean>
   
   <bean id="data" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="deploymentService">
