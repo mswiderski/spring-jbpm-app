@@ -10,10 +10,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <drools.version>6.2.0-SNAPSHOT</drools.version>
-    <jbpm.version>6.2.0-SNAPSHOT</jbpm.version>
+    <kie.version>6.3.1-SNAPSHOT</kie.version>
     <app.version>0.0.1-SNAPSHOT</app.version>
-
     <hibernate.version>4.2.0.Final</hibernate.version>
     <hibernate.core.version>4.2.0.Final</hibernate.core.version>
     <slf4j.version>1.6.4</slf4j.version>
@@ -30,18 +28,11 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.drools</groupId>
-        <artifactId>drools-bom</artifactId>
-        <type>pom</type>
-        <version>${drools.version}</version>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-platform-bom</artifactId>
+        <version>${kie.version}</version>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.jbpm</groupId>
-        <artifactId>jbpm-bom</artifactId>
         <type>pom</type>
-        <version>${jbpm.version}</version>
-        <scope>import</scope>
       </dependency>
 
       <dependency>
