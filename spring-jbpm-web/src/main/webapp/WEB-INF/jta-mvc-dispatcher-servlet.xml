@@ -13,9 +13,9 @@
 
   <context:component-scan base-package="org.jbpm.spring.web" />
 
-  <import resource="classpath:spring-tx-context.xml" />
-  <import resource="classpath:spring-jpa-context.xml" />
-  <import resource="classpath:spring-jbpm-context.xml" />
+  <import resource="classpath:jee-tx-context.xml" />
+  <import resource="classpath:jpa-context.xml" />
+  <import resource="classpath:jbpm-context.xml" />
 
   <mvc:annotation-driven />
   <mvc:default-servlet-handler />
