@@ -52,8 +52,18 @@ public class ProcessDefController {
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String newProcessInstance(@RequestParam String deploymentId, @RequestParam String processId,
 			@RequestParam Map<String,String> allRequestParams, ModelMap model) {
+		Object retry = allRequestParams.get("retry");
+		Object retryCount = allRequestParams.get("retrycount");
+		Map<String, Object> params = new HashMap<String, Object>(allRequestParams);
+		if (retry != null) {
+		    params.put("retry", Boolean.parseBoolean(retry.toString()));
+		}
 		
-		long processInstanceId = processService.startProcess(deploymentId, processId, new HashMap<String, Object>(allRequestParams));
+		if (retryCount != null) {
+		    params.put("retrycount", Integer.parseInt(retryCount.toString()));
+		}
+        
+		long processInstanceId = processService.startProcess(deploymentId, processId, params);
 		model.addAttribute("processInstanceId", processInstanceId);
 		return "newProcessInstance";
  

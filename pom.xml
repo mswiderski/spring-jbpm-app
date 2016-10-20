@@ -10,7 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <kie.version>6.3.1-SNAPSHOT</kie.version>
+    <kie.version>6.5.0-SNAPSHOT</kie.version>
     <app.version>0.0.1-SNAPSHOT</app.version>
     <hibernate.version>4.2.0.Final</hibernate.version>
     <hibernate.core.version>4.2.0.Final</hibernate.core.version>

@@ -56,6 +56,7 @@
     <property name="identityProvider" ref="identityProvider"/>
     <property name="runtimeDataService" ref="runtimeDataService"/>
     <property name="formManagerService" ref="formManagerService"/>
+    <property name="executorService" ref="executorService"/>    
   </bean>
   
   <bean id="data" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" depends-on="deploymentService">
@@ -76,6 +77,12 @@
   <bean id="userTaskService" class="org.jbpm.kie.services.impl.UserTaskServiceImpl" depends-on="deploymentService">
     <property name="dataService" ref="runtimeDataService"/>
     <property name="deploymentService" ref="deploymentService"/>
+  </bean>
+
+  <bean id="executorService" class="org.jbpm.executor.ExecutorServiceFactory"
+    factory-method="newExecutorService" depends-on="entityManagerFactory"
+    init-method="init" destroy-method="destroy">
+    <constructor-arg ref="entityManagerFactory" />
   </bean>
 
 </beans>
